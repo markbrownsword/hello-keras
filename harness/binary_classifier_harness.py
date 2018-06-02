@@ -25,14 +25,11 @@ test_corpus = [
 # Initialise Binary Classifier
 binary_classifier = BinaryClassifier()
 
-# Maximum Words
-n_words=1000
-
 # Train Model
-binary_classifier.train_model(training_corpus, n_words)
+binary_classifier.train_model(training_corpus)
 
 # Evaluate Model
-acc = binary_classifier.evaluate_model(test_corpus, n_words)
+acc = binary_classifier.evaluate_model(test_corpus)
 print( ' Test Accuracy: %f ' % acc)
 
 # Predict
