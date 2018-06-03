@@ -26,12 +26,12 @@ test_corpus = [
 binary_classifier = BinaryClassifier()
 
 # Train Model
-binary_classifier.train_model(training_corpus)
+binary_classifier.train(training_corpus)
 
 # Evaluate Model
-acc = binary_classifier.evaluate_model(test_corpus)
-print( ' Test Accuracy: %f ' % acc)
+accuracy = binary_classifier.evaluate(test_corpus)
+print('Test Accuracy: %f ' % (accuracy * 100))
 
 # Predict
-# result = model.predict('It\'s getting harder')
-# print('Prediction result :: {}'.format(result))
+percent, sentiment = binary_classifier.predict('It\'s getting harder')
+print('Sentiment: %s (%.2f%%) ' % (sentiment, percent * 100))
